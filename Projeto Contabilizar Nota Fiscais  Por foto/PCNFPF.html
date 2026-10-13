@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta
+ name="viewport"
+content="width=device-width, initial-scale=1.0"
+ >
+
+<title>Leitor Fiscal</title>
+
+<link
+ rel="stylesheet"
+ href="./style.css"
+>
+
+</head>
+
+
+<body>
+
+
+ <!-- ==========================================
+      VEGETAÇÃO LATERAL ESQUERDA
+ =========================================== -->
+
+<div class="folhagem folhagem-esquerda">
+
+<span class="folha folha1"></span>
+<span class="folha folha2"></span>
+<span class="folha folha3"></span>
+<span class="folha folha4"></span>
+<span class="folha folha5"></span>
+
+</div>
+
+
+<!-- ==========================================
+     VEGETAÇÃO LATERAL DIREITA
+=========================================== -->
+
+<div class="folhagem folhagem-direita">
+
+<span class="folha folha1"></span>
+<span class="folha folha2"></span>
+<span class="folha folha3"></span>
+<span class="folha folha4"></span>
+<span class="folha folha5"></span>
+
+</div>
+
+
+<!-- ==========================================
+     DRAGÃO
+=========================================== -->
+
+<div id="dragao">🐉</div>
+
+
+<!-- ==========================================
+      TÍTULO + BOLA
+=========================================== -->
+
+<div class="titulo-flor">
+
+<div class="bola-fundo">
+
+<div class="flores-girando">
+                🟢
+</div>
+
+</div>
+
+
+<h1>
+    Leitor Fiscal 
+</h1>
+
+</div>
+
+<!-- ==========================================
+      DESCRIÇÃO
+=========================================== -->
+
+<p class="ofzr">
+    Tire uma foto das notas e a IA integrada
+    registra para você!
+
+</p>
+
+
+<!-- ==========================================
+     BOTÃO PARA ENVIAR FOTO
+ =========================================== -->
+
+<label for="foto">
+
+    📸
+<br>
+
+Clique aqui para adicionar uma foto
+do comprovante
+
+
+<input
+id="foto"
+class="foto"
+type="file"
+accept="image/*"
+onchange="Lerfoto(event)"
+ >
+
+</label>
+
+
+<!-- ==========================================
+   RESUMO
+=========================================== -->
+
+<div class="resumo">
+
+<p>
+Total gasto
+</p>
+
+
+<div class="refvalor">
+ R$ 0,00
+</div>
+
+<div class="contador">
+0 comprovantes lidos
+</div>
+
+</div>
+
+
+<!-- ==========================================
+  MEUS COMPROVANTES
+=========================================== -->
+
+<div class="comprovantes-area">
+
+<div class="comprovantes-topo">
+
+<h3>
+  Meus comprovantes
+</h3>
+
+
+<button
+id="verMais"
+onclick="mostrarTodos()"
+style="display: none;"
+>
+Ver mais
+</button>
+
+</div>
+
+
+<div
+class="miniaturas"
+id="miniaturas"
+></div>
+
+</div>
+
+
+<!-- ==========================================
+ RESULTADOS DA IA
+=========================================== -->
+
+<div class="lista"></div>
+
+
+<!-- ==========================================
+  TOTAL GERAL
+=========================================== -->
+
+<div class="total-area">
+
+<p>
+ Total dos comprovantes
+</p>
+
+
+<div id="total">
+   R$ 0,00
+</div>
+
+</div>
+
+<img src="https://i.redd.it/izae5l7vgxtg1.gif" alt="ae86-racha"
+width="450">
+<!-- ==========================================
+  PUTER AI
+=========================================== -->
+
+<script src="https://js.puter.com/v2/"></script>
+
+
+<!-- ==========================================
+   JAVASCRIPT DO PROJETO
+=========================================== -->
+
+<script src="./scripts.js"></script>
+
+
+<!-- ==========================================
+ DRAGÃO SEGUINDO O MOUSE
+=========================================== -->
+
+<script>
+
+const dragao =
+document.getElementById("dragao");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let dragaoX = 0;
+let dragaoY = 0;
+
+
+document.addEventListener(
+"mousemove",
+function(event) {
+
+mouseX =
+event.clientX;
+
+mouseY =
+event.clientY;
+
+} );
+
+function seguirMouse() {
+
+dragaoX +=
+(mouseX - dragaoX) * 0.08;
+
+dragaoY +=
+(mouseY - dragaoY) * 0.08;
+
+
+dragao.style.left =
+dragaoX + "px";
+
+dragao.style.top =
+dragaoY + "px";
+
+
+requestAnimationFrame(
+seguirMouse);
+
+}
+
+
+seguirMouse();
+</script>
+
+</body>
+
+</html>
+

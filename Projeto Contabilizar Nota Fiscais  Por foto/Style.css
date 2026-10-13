@@ -1,0 +1,481 @@
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* ==========================================
+   DRAGÃO
+========================================== */
+
+#dragao {
+position: fixed;
+left: 0;
+top: 0;
+font-size: 50px;
+pointer-events: none;
+z-index: 9999;
+transform: translate(-50%, -50%);
+}
+
+/* ==========================================
+   FOLHAGEM LATERAL
+========================================== */
+
+.folhagem {
+position: fixed;
+top: 0;
+width: 180px;
+height: 100vh;
+pointer-events: none;
+z-index: 0;
+opacity: 0.18;
+}
+
+.folhagem::before {
+content: "";
+position: absolute;
+width: 5px;
+height: 430px;
+background: #c5c5c5;
+border-radius: 100%;
+top: 40px;
+}
+
+/* LADO ESQUERDO */
+
+.folhagem-esquerda {
+left: -40px;
+}
+
+.folhagem-esquerda::before {
+left: 70px;
+transform: rotate(-18deg);
+}
+
+/* LADO DIREITO */
+
+.folhagem-direita {
+right: -40px;
+}
+
+.folhagem-direita::before {
+right: 70px;
+transform: rotate(18deg);
+}
+
+/* FOLHAS */
+
+.folha {
+position: absolute;
+width: 70px;
+height: 32px;
+background: #c5c5c5;
+border-radius: 100% 0 100% 0;
+}
+
+.folha::after {
+content: "";
+position: absolute;
+width: 55px;
+height: 1px;
+background: #999999;
+top: 50%;
+left: 8px;
+transform: rotate(-8deg);
+opacity: 0.7;
+}
+
+/* FOLHAS ESQUERDAS */
+
+.folhagem-esquerda .folha1 {
+top: 100px;
+left: 65px;
+transform: rotate(25deg);
+}
+
+.folhagem-esquerda .folha2 {
+top: 160px;
+left: 35px;
+transform: rotate(-25deg);
+}
+
+.folhagem-esquerda .folha3 {
+top: 230px;
+left: 70px;
+transform: rotate(30deg);
+}
+
+.folhagem-esquerda .folha4 {
+top: 300px;
+left: 35px;
+transform: rotate(-30deg);
+}
+
+.folhagem-esquerda .folha5 {
+top: 370px;
+left: 70px;
+transform: rotate(25deg);
+}
+
+/* FOLHAS DIREITAS */
+
+.folhagem-direita .folha1 {
+top: 100px;
+right: 65px;
+transform: rotate(-25deg);
+}
+
+.folhagem-direita .folha2 {
+top: 160px;
+right: 35px;
+transform: rotate(25deg);
+}
+
+.folhagem-direita .folha3 {
+top: 230px;
+right: 70px;
+transform: rotate(-30deg);
+}
+
+.folhagem-direita .folha4 {
+top: 300px;
+right: 35px;
+transform: rotate(30deg);
+}
+
+.folhagem-direita .folha5 {
+top: 370px;
+right: 70px;
+transform: rotate(-25deg);
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+font-family: 'Poppins', sans-serif;
+background: #646462;
+color: #000000;
+max-width: 520px;
+margin: 0 auto;
+padding: 30px 20px;
+text-align: center;
+}
+
+/* ==========================================
+   TÍTULO
+========================================== */
+
+.titulo-flor {
+position: relative;
+width: 100%;
+min-height: 300px;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: visible;
+}
+
+.bola-fundo {
+position: absolute;
+width: 250px;
+height: 250px;
+background: #8d8b8c;
+border-radius: 50%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 0;
+overflow: hidden;
+}
+
+.flores-girando {
+font-size: 55px;
+letter-spacing: 8px;
+white-space: nowrap;
+animation: girarFlores 8s linear infinite;
+}
+
+@keyframes girarFlores {
+from {
+transform: rotate(0deg);
+}
+
+to {
+transform: rotate(360deg);
+}
+}
+
+.titulo-flor h1 {
+position: relative;
+z-index: 2;
+color: #18191b;
+font-size: 52px;
+line-height: 1.05;
+text-align: center;
+padding: 35px 15px;
+margin: 0;
+}
+
+/* ==========================================
+   DESCRIÇÃO
+========================================== */
+
+.ofzr {
+color: #03a34e;
+font-size: 25px;
+line-height: 1.5;
+padding: 15px;
+position: relative;
+z-index: 2;
+}
+
+/* ==========================================
+   BOTÃO / UPLOAD
+========================================== */
+
+label {
+background-color: white;
+color: #000000;
+border-radius: 20px;
+padding: 30px 20px;
+text-align: center;
+font-weight: bold;
+border: 3px dashed #000407;
+display: block;
+margin: 25px 0;
+cursor: pointer;
+transition: 0.2s;
+position: relative;
+z-index: 2;
+}
+
+label:hover {
+transform: translateY(-3px);
+background-color: #ffffff;
+}
+
+input {
+display: none;
+}
+
+/* ==========================================
+   RESUMO
+========================================== */
+
+.resumo {
+position: relative;
+z-index: 2;
+}
+
+.contador {
+color: #000000;
+font-size: 14px;
+margin-top: 10px;
+}
+
+.refvalor {
+color: #000000;
+font-size: 24px;
+font-weight: bold;
+margin-top: 15px;
+}
+
+/* ==========================================
+   COMPROVANTES
+========================================== */
+
+.comprovantes-area {
+background-color: rgb(255, 255, 255);
+border-radius: 20px;
+padding: 18px;
+margin-top: 25px;
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+position: relative;
+z-index: 2;
+}
+
+.comprovantes-topo {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 15px;
+}
+
+.comprovantes-topo h3 {
+color: #06350e;
+font-size: 18px;
+}
+
+#verMais {
+border: none;
+background: transparent;
+color: #021812;
+font-weight: bold;
+cursor: pointer;
+font-size: 14px;
+}
+
+.miniaturas {
+display: flex;
+gap: 12px;
+overflow-x: auto;
+padding-bottom: 5px;
+}
+
+.mini-comprovante {
+min-width: 110px;
+width: 110px;
+background-color: #f3f2f5;
+border-radius: 14px;
+padding: 8px;
+cursor: pointer;
+transition: 0.2s;
+}
+
+.mini-comprovante:hover {
+transform: translateY(-3px);
+}
+
+.mini-comprovante img {
+width: 94px;
+height: 115px;
+object-fit: cover;
+border-radius: 9px;
+display: block;
+}
+
+.mini-info {
+margin-top: 8px;
+display: flex;
+flex-direction: column;
+gap: 3px;
+text-align: left;
+}
+
+.mini-info strong {
+font-size: 12px;
+color: #06351e;
+}
+
+.mini-info span {
+font-size: 12px;
+font-weight: bold;
+color: #1f692f;
+}
+
+/* ==========================================
+   RESULTADO DA IA
+========================================== */
+
+.lista {
+background-color: white;
+border-radius: 20px;
+padding: 25px;
+margin-top: 25px;
+text-align: left;
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+line-height: 1.7;
+position: relative;
+z-index: 2;
+}
+
+.comprovante {
+background-color: white;
+border-radius: 14px;
+padding: 16px;
+margin-bottom: 12px;
+}
+
+.itens {
+white-space: pre-line;
+font-size: 15px;
+line-height: 1.8;
+color: #09141f;
+}
+
+.total-nota {
+display: flex;
+justify-content: space-between;
+border-top: 1px dashed #ffffff;
+padding-top: 12px;
+margin-top: 12px;
+font-size: 15px;
+color: #fff7f7;
+}
+
+/* ==========================================
+   TOTAL GERAL
+========================================== */
+
+.total-area {
+position: relative;
+z-index: 2;
+margin-top: 25px;
+}
+
+#total {
+color: #000000;
+font-size: 24px;
+font-weight: bold;
+}
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 480px) {
+
+body {
+padding: 20px 15px;
+}
+
+.titulo-flor {
+ min-height: 260px;
+}
+
+.bola-fundo {
+width: 230px;
+height: 230px;
+}
+
+.flores-girando {
+font-size: 42px;
+letter-spacing: 4px;
+}
+
+.titulo-flor h1 {
+font-size: 40px;
+padding: 25px 10px;
+}
+
+.ofzr {
+font-size: 18px;
+}
+
+label {
+padding: 25px 15px;
+}
+
+.folhagem {
+width: 120px;
+opacity: 0.12;
+}
+
+.folha {
+width: 55px;
+height: 27px;
+}
+}
+
+h1 { text-shadow: 10px 10px 10px #0ad44d;
+   font-style: inherit;
+
+
+}
