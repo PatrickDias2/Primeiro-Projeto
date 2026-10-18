@@ -2,7 +2,7 @@
 <h1> Meu Primeiro Projeto, Clique aqui para ver: https://patrickdias2.github.io/Primeiro-Projeto/ </h1>
 <br>
 
-<h2> Projeto tem em foco utilizar a leitura fiscal por fotos, somando, dizendo e dando um brilho fiscal, foquei muito em utilidade (...) não em beleza. <br> tenho pontos a melhorar! mais foi um bom primeiro projeto. </h2>
+<h2> Sobre <br> Projeto tem em foco utilizar a leitura fiscal por fotos, somando, dizendo e dando um brilho fiscal, foquei muito em utilidade (...) não em beleza. <br> tenho pontos a melhorar! mais foi um bom primeiro projeto. </h2>
 <br>
 
 <h3> Linguagens e Intergrações Utilizadas </h3>
